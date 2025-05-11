@@ -3,7 +3,9 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import json
-import os
+
+# Set page config
+st.set_page_config(page_title="Land Type Classifier", layout="centered")
 
 # Load model and class labels
 @st.cache_resource
@@ -18,9 +20,6 @@ def load_class_labels():
 
 model = load_model()
 class_labels = load_class_labels()
-
-# Set page config
-st.set_page_config(page_title="Land Type Classifier", layout="centered")
 
 st.title("🌍 Land Type Classification using Satellite Images")
 st.write("Upload a satellite image and we'll predict the land category.")
